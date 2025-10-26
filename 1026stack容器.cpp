@@ -1,10 +1,10 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 using namespace std;
-//2.ջ stack
+//2.栈 stack
 #include <stack>
-//ͨ�����η�װ˫�˶���(deque)������ʵ���Ƚ������ջ���ݽṹ
-//A.���÷���
+//通过二次封装双端队列(deque)容器，实现先进后出的栈数据结构
+//A.常用方法
 int main()
 {
 	stack<double> stk;
@@ -21,10 +21,10 @@ int main()
 }
 
 
-//B.��������
-//����ֱ������������Ҫ��дջ��
-//���⣬vectorҲ���Ե�ջ�ã�vector�� .back() ȡβ��Ԫ�أ����൱��ջ��
-//.push_back()�൱�ڽ�ջ��.pop_back()�൱�ڳ�ջ
+//B.适用情形
+//可以直接用它而不需要手写栈了
+//另外，vector也可以当栈用，vector的 .back() 取尾部元素，就相当于栈顶
+//.push_back()相当于进栈；.pop_back()相当于出栈
 #include <vector>
 int main()
 {
@@ -40,5 +40,5 @@ int main()
 }
 
 
-//C.ע������
-//���ɷ����ڲ�Ԫ�أ�ֻ��ѹջ�ͳ�ջ
+//C.注意事项
+//不可访问内部元素！只能压栈和出栈
