@@ -2,18 +2,18 @@
 #include <iostream>
 #include <string>
 using namespace std;
-//7.×Ö·û´® string
+//7.å­—ç¬¦ä¸² string
 #include <string>
-//¹ËÃûË¼Òå£¬¾ÍÊÇ´æ´¢×Ö·û´®µÄ
-//A.³£ÓÃ·½·¨
-//string(³¤¶È,³õÖµ)
+//é¡¾åæ€ä¹‰ï¼Œå°±æ˜¯å­˜å‚¨å­—ç¬¦ä¸²çš„
+//A.å¸¸ç”¨æ–¹æ³•
+//string(é•¿åº¦,åˆå€¼)
 int main()
 {
 	string s;
 	cin >> s;
 	cout << s << endl;
 
-	//ÓÃcÓïÑÔµÄprintfºÍscanfÊ¹ÓÃstring
+	//ç”¨cè¯­è¨€çš„printfå’Œscanfä½¿ç”¨string
 	/*string s1;
 	char buf[100];
 	scanf("%s", buf);
@@ -24,7 +24,7 @@ int main()
 	string s1(100, '0');
 	s1 = "awa";
 	cout << s1 << endl;
-	s1[0] = 'b';//¿ÉÒÔÖ±½ÓÐÞ¸Ä
+	s1[0] = 'b';//å¯ä»¥ç›´æŽ¥ä¿®æ”¹
 	cout << s1 << endl;
 
 
@@ -43,17 +43,17 @@ int main()
 	string sc = "123456789";
 	cout << sc.substr(3) << endl;//456789
 	cout << sc.substr(3, 4) << endl;//4567
-	//.substr(a,b)   a±íÊ¾×Ö´®µÄÆðÊ¼ÏÂ±ê£¬b±íÊ¾aÍùºóÓÐb¸ö×Ö·û£»Èô²ÎÊýÎ´ÌîÐ´b£¬Ôò´Óa¿ªÊ¼µÄ×Ó×Ö·û´®
+	//.substr(a,b)   aè¡¨ç¤ºå­—ä¸²çš„èµ·å§‹ä¸‹æ ‡ï¼Œbè¡¨ç¤ºaå¾€åŽæœ‰bä¸ªå­—ç¬¦ï¼›è‹¥å‚æ•°æœªå¡«å†™bï¼Œåˆ™ä»Žaå¼€å§‹çš„å­å­—ç¬¦ä¸²
 
 
 	string sd = "123123123";
-	cout << sd.find("312") << endl;//2    .find()·µ»ØµÄÊÇÆðÊ¼µãµÄÏÂ±ê
-	if (sd.find("312") != string::npos)//Èç¹ûÕÒ²»µ½×Ó×Ö·û´®£¬.find()»á·µ»Ø string::npos ÕâÊÇÉè¶¨ºÃµÄ
+	cout << sd.find("312") << endl;//2    .find()è¿”å›žçš„æ˜¯èµ·å§‹ç‚¹çš„ä¸‹æ ‡
+	if (sd.find("312") != string::npos)//å¦‚æžœæ‰¾ä¸åˆ°å­å­—ç¬¦ä¸²ï¼Œ.find()ä¼šè¿”å›ž string::npos è¿™æ˜¯è®¾å®šå¥½çš„
 		cout << "Yes" << endl;
 
 
 	string se = "123123123";
-	int x = stoi(se);//stoi():½«×Ö·ûÀàÐÍ×ª»¯ÎªÕûÐÍ   string to integer
+	int x = stoi(se);//stoi():å°†å­—ç¬¦ç±»åž‹è½¬åŒ–ä¸ºæ•´åž‹   string to integer
 	long long y = stoll(se);//string to long long
 	float z = stof(se);
 	double q = stod(se);
@@ -65,32 +65,55 @@ int main()
 	string sf = to_string(integer);
 	cout << sf << endl;
 
+	//åœ¨æŒ‡å®šä½ç½®æ’å…¥ï¼š
+	string str1="Working people ";
+    string str2="Working soul ";
+    string str3="Working people are Exalted";
+
+    //string &insert(int p0, const char *s)
+    //åœ¨åŽŸå­—ç¬¦ä¸²ä¸‹æ ‡ä¸ºposçš„å­—ç¬¦å‰æ’å…¥å­—ç¬¦ä¸²str
+    //è¿”å›žå€¼ï¼šæ’å…¥å­—ç¬¦ä¸²åŽçš„ç»“æžœ
+
+    auto str=str1.insert(15,"Working soul ");
+    cout<<"str1: "<<str1<<endl;                          		//str1: Working people Working soul
+    cout<<"str: "<<str<<endl;                           	 	 //str: Working people Working soul
+
+    //string &insert(int p0, const char *s, int n);
+    //åœ¨p0ä½ç½®æ’å…¥å­—ç¬¦ä¸²sçš„å‰nä¸ªå­—ç¬¦
+    //è¿”å›žå€¼ï¼šæ’å…¥å­—ç¬¦ä¸²åŽçš„ç»“æžœ
+
+    str=str1.insert(28,"Working people are Exalted",26);
+    cout<<"str1: "<<str1<<endl;                         	     //str1: Working people Working soul Working people are Exalted
+    cout<<"str: "<<str<<endl;                                   //str: Working people Working soul Working people are Exalted
+
+
 	return 0;
 }
 
 
-//B.ÊÊÓÃÇéÐÎ
-//    º»
+//B.é€‚ç”¨æƒ…å½¢
+//    å¤¯
 
 
-//C.×¢ÒâÊÂÏî
-//a.Î²½Ó×Ö·û´®Ò»¶¨ÒªÓÃ +=
-//stringµÄ+=ÔËËã·û£¬½«»áÔÚÔ­×Ö·û´®Ô­µØÎ²½Ó×Ö·û´®
-//¶ø+ÁËÔÙ=¸³Öµ£¬»áÏÈÉú³ÉÒ»¸öÁÙÊ±±äÁ¿£¬ÔÙ¸´ÖÆ¸østring£¬Í¨³£×Ö·û´®³¤¶È¿ÉÒÔºÜ³¤£¬Èç¹ûÊ¹ÓÃ+×Ö·û´®¾ÍºÜÈÝÒ×TLEÁË
+//C.æ³¨æ„äº‹é¡¹
+//a.å°¾æŽ¥å­—ç¬¦ä¸²ä¸€å®šè¦ç”¨ +=
+//stringçš„+=è¿ç®—ç¬¦ï¼Œå°†ä¼šåœ¨åŽŸå­—ç¬¦ä¸²åŽŸåœ°å°¾æŽ¥å­—ç¬¦ä¸²
+//è€Œ+äº†å†=èµ‹å€¼ï¼Œä¼šå…ˆç”Ÿæˆä¸€ä¸ªä¸´æ—¶å˜é‡ï¼Œå†å¤åˆ¶ç»™stringï¼Œé€šå¸¸å­—ç¬¦ä¸²é•¿åº¦å¯ä»¥å¾ˆé•¿ï¼Œå¦‚æžœä½¿ç”¨+å­—ç¬¦ä¸²å°±å¾ˆå®¹æ˜“TLEäº†
 // 
-// ÓÅ»¯Ç°£º15139ms
+// ä¼˜åŒ–å‰ï¼š15139ms
 // string s;
 // for(int i = 0;i<5e5;i++)
 //     s = s + "a";
 // 
-// ÓÅ»¯ºó£º< 1ms £¨¼ÆÊ±Æ÷ÏÔÊ¾0£©
+// ä¼˜åŒ–åŽï¼š< 1ms ï¼ˆè®¡æ—¶å™¨æ˜¾ç¤º0ï¼‰
 // string s;
 // for(int i = 0;i<5e5;i++)
 //     s+="a";
 
-//b. .substr()·½·¨µÄÆæÝâ²ÎÊý
-//Ò»¶¨Òª×¢Òâ£¬C++ string µÄÈ¡×Ó´®µÄµÚÒ»¸ö²ÎÊýÊÇ×Ó´®ÆðµãÏÂ±ê£¬µÚ¶þ¸ö²ÎÊýÊÇ×Ó´®³¤¶È
-//µÚ¶þ¸ö²ÎÊý²»ÊÇ×Ó´®ÖÕµã£¡£¡£¡
+//b. .substr()æ–¹æ³•çš„å¥‡è‘©å‚æ•°
+//ä¸€å®šè¦æ³¨æ„ï¼ŒC++ string çš„å–å­ä¸²çš„ç¬¬ä¸€ä¸ªå‚æ•°æ˜¯å­ä¸²èµ·ç‚¹ä¸‹æ ‡ï¼Œç¬¬äºŒä¸ªå‚æ•°æ˜¯å­ä¸²é•¿åº¦
+//ç¬¬äºŒä¸ªå‚æ•°ä¸æ˜¯å­ä¸²ç»ˆç‚¹ï¼ï¼ï¼
 
-//c. .find·½·¨µÄ¸´ÔÓ¶È
-//¸Ã·½·¨ÊµÏÖÎª±©Á¦ÊµÏÖ£¬Ê±¼ä¸´ÔÓ¶ÈÎªO(n^2)
+//c. .findæ–¹æ³•çš„å¤æ‚åº¦
+//è¯¥æ–¹æ³•å®žçŽ°ä¸ºæš´åŠ›å®žçŽ°ï¼Œæ—¶é—´å¤æ‚åº¦ä¸ºO(n^2)
+
