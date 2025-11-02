@@ -520,6 +520,7 @@ int main()
 
 	string sd = "123123123";
 	cout << sd.find("312") << endl;//2    .find()返回的是起始点的下标
+	cout << sd.find("312",5)<<endl;//5    .find(str,n)从下标为n开始查找字符串str
 	if (sd.find("312") != string::npos)//如果找不到子字符串，.find()会返回 string::npos 这是设定好的
 		cout << "Yes" << endl;
 
@@ -836,4 +837,5 @@ int lcm(int a, int b)
 {
 	return a / gcd(a, b) * b;
 }
+
 
