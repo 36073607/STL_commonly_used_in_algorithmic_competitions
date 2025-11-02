@@ -48,6 +48,7 @@ int main()
 
 	string sd = "123123123";
 	cout << sd.find("312") << endl;//2    .find()返回的是起始点的下标
+	cout << sd.find("312",5)<<endl;//5    .find(str,n)从下标为n开始查找字符串str
 	if (sd.find("312") != string::npos)//如果找不到子字符串，.find()会返回 string::npos 这是设定好的
 		cout << "Yes" << endl;
 
@@ -116,4 +117,5 @@ int main()
 
 //c. .find方法的复杂度
 //该方法实现为暴力实现，时间复杂度为O(n^2)
+
 
