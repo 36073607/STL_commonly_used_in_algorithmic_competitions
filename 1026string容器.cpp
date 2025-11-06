@@ -88,6 +88,19 @@ int main()
     cout<<"str: "<<str<<endl;                                   //str: Working people Working soul Working people are Exalted
 
 
+	//删除
+	string reverse_str(string str)
+	{
+    	int count = 0;
+    	for (int i = 0; i < str.size(); i++)
+    	{
+        	if (str[i] == '0')
+            	count++;
+        	else
+            	break;
+    	}
+    	str.erase(str.begin(), str.begin() + count);
+	}
 	return 0;
 }
 
@@ -117,5 +130,6 @@ int main()
 
 //c. .find方法的复杂度
 //该方法实现为暴力实现，时间复杂度为O(n^2)
+
 
 
