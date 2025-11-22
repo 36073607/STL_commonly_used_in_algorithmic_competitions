@@ -2,7 +2,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-//Ëã·¨
+//ç®—æ³•
 #include <algorithm>
 //swap
 int main()
@@ -15,31 +15,31 @@ int main()
 	return 0;
 }
 
-//sort £¨¿ìËÙÅÅĞò£©
+//sort ï¼ˆå¿«é€Ÿæ’åºï¼‰
 int main()
 {
 	vector<int> arr{ 1,9,1,9,8,1,0 };
-	sort(arr.begin(), arr.end());//´ÓĞ¡µ½´óÅÅ
+	sort(arr.begin(), arr.end());//ä»å°åˆ°å¤§æ’
 	for (int i = 0; i < arr.size(); i++)
 	{
 		cout << arr[i] << endl;
 	}
 
 
-	sort(arr.begin(), arr.end(), greater<int>());//´Ó´óµ½Ğ¡ÅÅ
+	sort(arr.begin(), arr.end(), greater<int>());//ä»å¤§åˆ°å°æ’
 	for (int i = 0; i < arr.size(); i++)
 		cout << arr[i] << endl;
 
 	return 0;
 }
-//×Ô¶¨Òå±È½ÏÆ÷
-bool cmp(pair<int, int> a, pair<int, int> b)//µ±cmpº¯Êı·µ»Øtrue,±íÊ¾Á½¸öÔªËØÎ»ÖÃÊÇÕıÈ·µÄ£¬²»ĞèÒª½»»»Î»ÖÃ
+//è‡ªå®šä¹‰æ¯”è¾ƒå™¨
+bool cmp(pair<int, int> a, pair<int, int> b)//å½“cmpå‡½æ•°è¿”å›true,è¡¨ç¤ºä¸¤ä¸ªå…ƒç´ ä½ç½®æ˜¯æ­£ç¡®çš„ï¼Œä¸éœ€è¦äº¤æ¢ä½ç½®
 {
-	//pairµÚ¶şÎ»´ÓĞ¡µ½´ó
+	//pairç¬¬äºŒä½ä»å°åˆ°å¤§
 	if (a.second != b.second)
-		return a.second < b.second;//×¢Òâ²»Òª´øµÈºÅ
-	//pairµÚÒ»Î»´Ó´óµ½Ğ¡
-	return a.first > b.first;//×¢Òâ²»Òª´øµÈºÅ
+		return a.second < b.second;//æ³¨æ„ä¸è¦å¸¦ç­‰å·
+	//pairç¬¬ä¸€ä½ä»å¤§åˆ°å°
+	return a.first > b.first;//æ³¨æ„ä¸è¦å¸¦ç­‰å·
 }
 int main()
 {
@@ -53,14 +53,14 @@ int main()
 	return 0;
 }
 
-//¶ş·Ö²éÕÒ : lower_bound()  /  upper_bound()
-//ÔÚ ÒÑÉıĞòÅÅÁĞ µÄÔªËØÖĞ£¬Ó¦ÓÃ¶ş·Ö²éÕÒ¼ìË÷Ö¸¶¨ÔªËØ£¬·µ»Ø¶ÔÓ¦ÔªËØµü´úÆ÷Î»ÖÃ£¬ÕÒ²»µ½Ôò·µ»ØÎ²µü´úÆ÷
-//lower_bound() £ºÑ°ÕÒ>=xµÄµÚÒ»¸öÔªËØµÄÎ»ÖÃ
-//upper_bound() £ºÑ°ÕÒ>xµÄµÚÒ»¸öÔªËØµÄÎ»ÖÃ
-//Q:ÔõÃ´ÕÒ <=x / <x µÄµÚÒ»¸öÔªËØ£¿
-// >x µÄµÚÒ»¸öÔªËØµÄÇ°Ò»¸öÔªËØ£¨Èç¹ûÓĞ£©±ãÊÇ<=xµÄµÚÒ»¸öÔªËØ
-// >=x µÄµÚÒ»¸öÔªËØµÄÇ°Ò»¸öÔªËØ£¨Èç¹ûÓĞ£©±ãÊÇ<xµÄµÚÒ»¸öÔªËØ
-//Q:·µ»ØµÄÊÇµü´úÆ÷£¬ÈçºÎ×ª³ÉÏÂ±êË÷ÒıÄØ£¿¼õÈ¥Í·µü´úÆ÷¼´¿É
+//äºŒåˆ†æŸ¥æ‰¾ : lower_bound()  /  upper_bound()
+//åœ¨ å·²å‡åºæ’åˆ— çš„å…ƒç´ ä¸­ï¼Œåº”ç”¨äºŒåˆ†æŸ¥æ‰¾æ£€ç´¢æŒ‡å®šå…ƒç´ ï¼Œè¿”å›å¯¹åº”å…ƒç´ è¿­ä»£å™¨ä½ç½®ï¼Œæ‰¾ä¸åˆ°åˆ™è¿”å›å°¾è¿­ä»£å™¨
+//lower_bound() ï¼šå¯»æ‰¾>=xçš„ç¬¬ä¸€ä¸ªå…ƒç´ çš„ä½ç½®
+//upper_bound() ï¼šå¯»æ‰¾>xçš„ç¬¬ä¸€ä¸ªå…ƒç´ çš„ä½ç½®
+//Q:æ€ä¹ˆæ‰¾ <=x / <x çš„ç¬¬ä¸€ä¸ªå…ƒç´ ï¼Ÿ
+// >x çš„ç¬¬ä¸€ä¸ªå…ƒç´ çš„å‰ä¸€ä¸ªå…ƒç´ ï¼ˆå¦‚æœæœ‰ï¼‰ä¾¿æ˜¯<=xçš„ç¬¬ä¸€ä¸ªå…ƒç´ 
+// >=x çš„ç¬¬ä¸€ä¸ªå…ƒç´ çš„å‰ä¸€ä¸ªå…ƒç´ ï¼ˆå¦‚æœæœ‰ï¼‰ä¾¿æ˜¯<xçš„ç¬¬ä¸€ä¸ªå…ƒç´ 
+//Q:è¿”å›çš„æ˜¯è¿­ä»£å™¨ï¼Œå¦‚ä½•è½¬æˆä¸‹æ ‡ç´¢å¼•å‘¢ï¼Ÿå‡å»å¤´è¿­ä»£å™¨å³å¯
 int main()
 {
 	vector<int> arr{ 0,1,1,1,8,9,9 };
@@ -68,7 +68,7 @@ int main()
 	int pos2 = upper_bound(arr.begin(), arr.end(), 8) - arr.begin();
 	cout << pos1 << " " << pos2 << endl;//4 5
 
-	int posa = lower_bound(arr.begin() + 2, arr.end(), 0) - arr.end();//¿ÉÒÔ×Ô¼ºµ÷½Ú²éÕÒ·¶Î§
+	int posa = lower_bound(arr.begin() + 2, arr.end(), 0) - arr.end();//å¯ä»¥è‡ªå·±è°ƒèŠ‚æŸ¥æ‰¾èŒƒå›´
 
 	return 0;
 }
@@ -83,7 +83,7 @@ int main()
 		cout << pt << endl;
 	}
 
-	reverse(arr.begin() + 2, arr.begin() + 6);//¿ÉÒÔ×Ô¶¨ÒåÄæ×ªµÄÒ»Ğ¡¶ÎĞòÁĞ
+	reverse(arr.begin() + 2, arr.begin() + 6);//å¯ä»¥è‡ªå®šä¹‰é€†è½¬çš„ä¸€å°æ®µåºåˆ—
 
 	return 0;
 }
@@ -92,25 +92,25 @@ int main()
 int main()
 {
 	cout << max(max(1, 3), 4) << endl;
-	cout << max({ 1,3,5,2 }) << endl;//C++11ÒÔºó¿ÉÒÔÕâÑùĞ´
+	cout << max({ 1,3,5,2 }) << endl;//C++11ä»¥åå¯ä»¥è¿™æ ·å†™
 	cout << min(1, 3) << endl;
 
 	return 0;
 }
 
-//unique È¥ÖØ
-//Ïû³ıÊı×éµÄÖØ¸´ÏàÁÚÔªËØ£¬Êı×é³¤¶È²»±ä£¬µ«ÊÇÓĞĞ§Êı¾İËõ¶Ì£¬·µ»ØµÄÊÇÓĞĞ§Êı¾İÎ»ÖÃµÄ½áÎ²µü´úÆ÷
-//ÀıÈç£º[1,1,4,5,1,4]--->>[1,4,5,1,4,?]
-//×¢£º
-//µ¥¶ÀÊ¹ÓÃunique²¢²»ÄÜ´ï³ÉÈ¥ÖØĞ§¹û£¬ÒòÎªËüÖ»Ïû³ıÏàÁÚµÄÖØ¸´ÔªËØ£¬µ«ÊÇÈç¹ûĞòÁĞÓĞĞò£¬ÄÇÃ´Ëü¾ÍÄÜÈ¥ÖØÁË
-//µ«ÊÇËüÈ¥ÖØºó£¬ĞòÁĞÎ²²¿»á²úÉúÒ»Ğ©ÎŞĞ§Êı¾İ£º[1,1,2,4,4,4,5]-->>[1,2,4,5,?,?,?],ÎªÁËÉ¾µôÕâĞ©ÎŞĞ§Êı¾İ£¬ÎÒÃÇĞèÒª½áºÏerase
+//unique å»é‡
+//æ¶ˆé™¤æ•°ç»„çš„é‡å¤ç›¸é‚»å…ƒç´ ï¼Œæ•°ç»„é•¿åº¦ä¸å˜ï¼Œä½†æ˜¯æœ‰æ•ˆæ•°æ®ç¼©çŸ­ï¼Œè¿”å›çš„æ˜¯æœ‰æ•ˆæ•°æ®ä½ç½®çš„ç»“å°¾è¿­ä»£å™¨
+//ä¾‹å¦‚ï¼š[1,1,4,5,1,4]--->>[1,4,5,1,4,?]
+//æ³¨ï¼š
+//å•ç‹¬ä½¿ç”¨uniqueå¹¶ä¸èƒ½è¾¾æˆå»é‡æ•ˆæœï¼Œå› ä¸ºå®ƒåªæ¶ˆé™¤ç›¸é‚»çš„é‡å¤å…ƒç´ ï¼Œä½†æ˜¯å¦‚æœåºåˆ—æœ‰åºï¼Œé‚£ä¹ˆå®ƒå°±èƒ½å»é‡äº†
+//ä½†æ˜¯å®ƒå»é‡åï¼Œåºåˆ—å°¾éƒ¨ä¼šäº§ç”Ÿä¸€äº›æ— æ•ˆæ•°æ®ï¼š[1,1,2,4,4,4,5]-->>[1,2,4,5,?,?,?],ä¸ºäº†åˆ æ‰è¿™äº›æ— æ•ˆæ•°æ®ï¼Œæˆ‘ä»¬éœ€è¦ç»“åˆerase
 int main()
 {
 	vector<int> arr{ 1,2,1,4,5,4,4 };
 	sort(arr.begin(), arr.end());
 	//1,1,2,4,4,4,5
 	//1,2,4,5,*,?,?
-	//unique(arr.begin(), arr.end());//unique()µÄ·µ»ØÖµÊÇ*µÄÎ»ÖÃµÄµü´úÆ÷
+	//unique(arr.begin(), arr.end());//unique()çš„è¿”å›å€¼æ˜¯*çš„ä½ç½®çš„è¿­ä»£å™¨
 	arr.erase(unique(arr.begin(), arr.end()), arr.end());
 	for (auto& ele : arr)
 	{
@@ -120,18 +120,18 @@ int main()
 	return 0;
 }
 
-//ÊıÑ§º¯Êı
-//¾ø¶ÔÖµ abs()
+//æ•°å­¦å‡½æ•°
+//ç»å¯¹å€¼ abs()
 //e^x  exp()
 //lnx  log()
 //x^y  pow()
-//¸ùºÅx  sqrt()
-//ÏòÉÏÈ¡Õû  ceil()
-//ÏòÏÂÈ¡Õû  floor()
-//ËÄÉáÎåÈë  round()
+//æ ¹å·x  sqrt()
+//å‘ä¸Šå–æ•´  ceil()
+//å‘ä¸‹å–æ•´  floor()
+//å››èˆäº”å…¥  round()
 
-//gcd()×î´ó¹«Ô¼Êı / lcm()×îĞ¡¹«±¶Êı   C++17Ö§³Ö
-//×Ô¼ºÊÖ´êÒ»¸öÒ²Í¦¿ì
+//gcd()æœ€å¤§å…¬çº¦æ•° / lcm()æœ€å°å…¬å€æ•°   C++17æ”¯æŒ
+//è‡ªå·±æ‰‹æ“ä¸€ä¸ªä¹ŸæŒºå¿«
 int gcd(int a, int b)
 {
 	if (!b)
@@ -141,4 +141,51 @@ int gcd(int a, int b)
 int lcm(int a, int b)
 {
 	return a / gcd(a, b) * b;
+}
+
+//å…¨æ’åˆ—  next_permutation
+//template<class Iterator>
+//  bool next_permutation (Iterator first, Iterator last);
+
+//template<class Iterator, class Compare>
+//  bool next_permutation (Iterator first, Iterator last, Compare comp);
+
+//æŒ‰ç…§ å­—å…¸åº æˆ–è€… æŒ‰ç…§è¾“å…¥åˆ°ç¬¬ä¸‰ä¸ªå‚æ•° cmp çš„æ’åˆ—æ–¹æ³•æ’åˆ—
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+  string number = "213";
+  next_permutation(number.begin(), number.end());
+  cout << number;
+//è¾“å‡ºç»“æœä¸ºï¼š 231
+  return 0;
+}
+
+//æ´›è°· P1088 ç«æ˜Ÿäºº
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+int main()
+{
+	int n, m;
+	cin >> n >> m;
+	vector<int> arr;
+	for (int i = 0; i < n; i++)
+	{
+		int tmp;
+		cin >> tmp;
+		arr.push_back(tmp);
+	}
+
+	for (int i = 0; i < m; i++)
+		next_permutation(arr.begin(), arr.end());
+
+	for (int i = 0; i < n; i++)
+		cout << arr[i] << " ";
+
+	return 0;
 }
