@@ -73,7 +73,7 @@ int main()
 	return 0;
 }
 
-//reverse
+//reverse  STL的reverse函数是左闭右开区间
 int main()
 {
 	vector<int> arr{ 0,1,1,1,8,9,9 };
@@ -189,3 +189,4 @@ int main()
 
 	return 0;
 }
+
