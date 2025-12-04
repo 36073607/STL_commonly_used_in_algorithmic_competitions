@@ -88,6 +88,20 @@ int main()
 	return 0;
 }
 
+// 辅助函数：翻转vector中从start开始，长度为k的部分
+void reverseVectorPart(vector<ListNode*>& nodes, int start, int k)
+{
+    int left = start;
+    int right = start + k - 1;
+    
+    while (left < right) {
+        swap(nodes[left], nodes[right]);
+        left++;
+        right--;
+    }
+}
+
+
 //max/min
 int main()
 {
@@ -189,4 +203,5 @@ int main()
 
 	return 0;
 }
+
 
