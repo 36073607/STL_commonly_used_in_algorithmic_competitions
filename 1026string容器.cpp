@@ -105,6 +105,27 @@ int main()
 }
 
 
+//append
+//append函数常用的三个功能：
+//直接添加另一个完整的字符串:如str1.append(str2);
+//添加另一个字符串的某一段子串:如str1.append(str2, 11, 7);
+//添加几个相同的字符:如str1.append(5, ‘.’);注意,个数在前字符在后.上面的代码意思为在str1后面添加5个"."
+
+	string str1="I like C++";  
+    string str2=",I like the world.";  
+    string str3="Hello";  
+    string str4("Hi");  
+    //====================================  
+    str1.append(str2);  
+    str3.append(str2, 11, 7);  
+    str4.append(5, '.');  
+    //====================================  
+    cout<<str1<<endl;  //I like C++,I like the world.
+    cout<<str3<<endl;  //Hello World.
+    cout<<str4<<endl;  //Hi.....
+
+
+
 //B.适用情形
 //    夯
 
@@ -130,6 +151,7 @@ int main()
 
 //c. .find方法的复杂度
 //该方法实现为暴力实现，时间复杂度为O(n^2)
+
 
 
 
