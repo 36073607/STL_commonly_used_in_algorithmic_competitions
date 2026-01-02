@@ -205,3 +205,48 @@ int main()
 }
 
 
+
+//fill  可用于任何容器（vector, array, deque, list 等）
+//std::fill 是 C++ 标准库中的一个算法函数，用于将指定范围内的所有元素设置为给定的值。
+#include <algorithm>  // 需要包含此头文件
+#include <vector>
+#include <iostream>
+#include <array>
+
+int main() {
+    // 1. 用于 vector
+    std::vector<int> vec(5);
+    std::fill(vec.begin(), vec.end(), 10);
+    // vec = {10, 10, 10, 10, 10}
+    
+    // 2. 用于数组
+    int arr[5] = {1, 2, 3, 4, 5};
+    std::fill(arr, arr + 5, 0);
+    // arr = {0, 0, 0, 0, 0}
+    
+    // 3. 部分填充
+    std::vector<int> vec2 = {1, 2, 3, 4, 5};
+    std::fill(vec2.begin() + 1, vec2.begin() + 4, 9);
+    // vec2 = {1, 9, 9, 9, 5}
+    
+    return 0;
+}
+
+//替代方法比较
+使用 std::fill（推荐）
+std::vector<int> cnts(256, 0);
+// 重置
+std::fill(cnts.begin(), cnts.end(), 0);
+
+使用 assign 方法（vector 特有）
+std::vector<int> cnts(256, 0);
+// 重置
+cnts.assign(256, 0);
+
+使用 memset（只适用于 POD 类型）
+int cnts[256];
+memset(cnts, 0, sizeof(cnts));  // 快速清0
+// 注意：对于非整型或复杂类型，不要用 memset
+
+
+
